@@ -1,0 +1,160 @@
+{
+  "data": [
+    {
+      "record_locator": "sd-supply-779",
+      "table_name": "structured_data",
+      "detail": "SUPPLYOUTPUT",
+      "record_date": "2026-03-16",
+      "summary": "Uso de insumos — Gasoil 200 L, Aceite hidraulico 20 L",
+      "structure": {
+        "name": "Uso de Insumos",
+        "keys": { "Insumo": "Gasoil, Aceite hidraulico", "Cantidad": "200 L, 20 L" }
+      },
+      "parent_record_locator": null,
+      "supplies": [
+        { "link_id": "lnk-779-r0", "kind": "RECORD", "name": "Gasoil", "supply": { "id": "sup-gasoil", "name": "Gasoil", "unit": "Litros", "photo_url": "https://cdn.example/sup-gasoil.jpg" }, "dosage": null, "consumed": { "quantity": 200, "unit": "Litros" } },
+        { "link_id": "lnk-779-r1", "kind": "RECORD", "name": "Aceite hidraulico", "supply": { "id": "sup-aceite-hidraulico", "name": "Aceite hidraulico", "unit": "Litros", "photo_url": "https://cdn.example/sup-aceite.jpg" }, "dosage": null, "consumed": { "quantity": 20, "unit": "Litros" } }
+      ],
+      "children": []
+    },
+    {
+      "record_locator": "sd-trat-004",
+      "table_name": "structured_data",
+      "detail": "TREATMENT",
+      "record_date": "2026-03-15",
+      "summary": "Tratamiento — Vaquillonas — Ivermectina",
+      "structure": {
+        "name": "Tratamiento",
+        "keys": { "Tratamiento": "Antiparasitario", "Producto": "Ivermectina", "Categoría": "Vaquillonas" }
+      },
+      "parent_record_locator": null,
+      "supplies": [
+        {
+          "link_id": "lnk-004-p0",
+          "kind": "PRODUCT",
+          "name": "Ivermectina",
+          "supply": { "id": "sup-ivermectina", "name": "Ivermectina", "unit": "Mililitros", "photo_url": "https://cdn.example/sup-ivermectina.jpg" },
+          "dosage": { "value": 5, "units": "ml" },
+          "consumed": { "quantity": 500, "unit": "Mililitros", "record_locator": "sd-supply-778" }
+        }
+      ],
+      "children": [
+        {
+          "record_locator": "sd-supply-778",
+          "table_name": "structured_data",
+          "detail": "SUPPLYOUTPUT",
+          "relation": "SUPPLY_CONSUMPTION",
+          "record_date": "2026-03-15",
+          "summary": "Se utilizó el siguiente insumo: Ivermectina (500 ml)",
+          "parent_record_locator": "sd-trat-004",
+          "actions": { "edit": "parent", "delete": "stop_deduction" }
+        }
+      ]
+    },
+    {
+      "record_locator": "sd-pulv-003",
+      "table_name": "structured_data",
+      "detail": "PULVERIZATION",
+      "record_date": "2026-03-14",
+      "summary": "Pulverización — Lote Sur — Glifosato 2 L/ha",
+      "structure": {
+        "name": "Pulverización",
+        "lote_names": ["Lote Sur"],
+        "keys": { "Producto": "Glifosato", "Dosis": "2 L/ha" }
+      },
+      "parent_record_locator": null,
+      "supplies": [
+        {
+          "link_id": "lnk-003-t0",
+          "kind": "TREATMENT",
+          "name": "Glifosato",
+          "supply": null,
+          "dosage": { "value": 2, "units": "L/ha" },
+          "consumed": null
+        }
+      ],
+      "children": []
+    },
+    {
+      "record_locator": "sd-fert-002",
+      "table_name": "structured_data",
+      "detail": "FERTILIZATION",
+      "record_date": "2026-03-12",
+      "summary": "Fertilización — Lote Sur — Urea 10 kg/ha",
+      "structure": {
+        "name": "Fertilización",
+        "lote_names": ["Lote Sur"],
+        "keys": { "Cultivo": "Trigo", "Fertilizante": "Urea", "Dosis": "10 kg/ha" }
+      },
+      "parent_record_locator": null,
+      "supplies": [
+        {
+          "link_id": "lnk-002-f0",
+          "kind": "FERTILIZER",
+          "name": "Urea",
+          "supply": { "id": "sup-urea", "name": "Urea", "unit": "Kilos", "photo_url": "https://cdn.example/sup-urea.jpg" },
+          "dosage": { "value": 10, "units": "kg/ha" },
+          "consumed": { "quantity": 100, "unit": "Kilos", "record_locator": "sd-supply-777" }
+        }
+      ],
+      "children": [
+        {
+          "record_locator": "sd-supply-777",
+          "table_name": "structured_data",
+          "detail": "SUPPLYOUTPUT",
+          "relation": "SUPPLY_CONSUMPTION",
+          "record_date": "2026-03-12",
+          "summary": "Se utilizó el siguiente insumo en el potrero Lote Sur: Urea (100 kg)",
+          "parent_record_locator": "sd-fert-002",
+          "actions": { "edit": "parent", "delete": "stop_deduction" }
+        }
+      ]
+    },
+    {
+      "record_locator": "sd-siembra-001",
+      "table_name": "structured_data",
+      "detail": "PLANTATION",
+      "record_date": "2026-03-10",
+      "summary": "Siembra — Lote Norte — Maíz DK7210",
+      "structure": {
+        "name": "Siembra",
+        "lote_names": ["Lote Norte"],
+        "keys": { "Cultivo": "Maíz", "Genética": "DK7210", "Fertilizante": "Fosfato diamónico" }
+      },
+      "parent_record_locator": null,
+      "supplies": [
+        {
+          "link_id": "lnk-001-gen",
+          "kind": "GENETIC",
+          "name": "DK7210",
+          "supply": { "id": "sup-dk7210", "name": "DK7210", "unit": "Bolsas", "photo_url": "https://cdn.example/sup-dk7210.jpg" },
+          "dosage": { "value": 80000, "units": "seeds/ha" },
+          "consumed": { "quantity": 40, "unit": "Bolsas", "record_locator": "sd-supply-776" }
+        },
+        {
+          "link_id": "lnk-001-f0",
+          "kind": "FERTILIZER",
+          "name": "Fosfato diamónico",
+          "supply": { "id": "sup-fosfato-diamonico", "name": "Fosfato diamónico", "unit": "Kilos", "photo_url": "https://cdn.example/sup-fosfato.jpg" },
+          "dosage": { "value": 100, "units": "kg/ha" },
+          "consumed": null
+        }
+      ],
+      "children": [
+        {
+          "record_locator": "sd-supply-776",
+          "table_name": "structured_data",
+          "detail": "SUPPLYOUTPUT",
+          "relation": "SUPPLY_CONSUMPTION",
+          "record_date": "2026-03-10",
+          "summary": "Se utilizó el siguiente insumo en el potrero Lote Norte: DK7210 (40 bolsas)",
+          "parent_record_locator": "sd-siembra-001",
+          "actions": { "edit": "parent", "delete": "stop_deduction" }
+        }
+      ]
+    }
+  ],
+  "total": 5,
+  "new_records": 0,
+  "next_cursor": "eyJyZWNvcmRfZGF0ZSI6IjIwMjYtMDMtMTAiLCJpZCI6InNkLXNpZW1icmEtMDAxIn0="
+}

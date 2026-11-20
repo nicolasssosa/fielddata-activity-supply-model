@@ -1,0 +1,107 @@
+{
+  "structured_data": {
+    "id": "sd-fert-002",
+    "type": "FERTILIZATION",
+    "establishment_id": "est-la-esperanza",
+    "data": {
+      "basic_info": {
+        "record_date": "2026-03-12",
+        "crop_category": "Trigo"
+      },
+      "fields": [
+        {
+          "field_id": "fld-lote-sur",
+          "name": "Lote Sur",
+          "hectares": 10
+        }
+      ],
+      "contractor": null,
+      "fertilizers": [
+        {
+          "item_id": "it-fert-002-f0",
+          "source": "Urea",
+          "supply_id": "sup-urea",
+          "dosage": 10,
+          "dosage_units": "kg/ha",
+          "deduction": {
+            "quantity": 100
+          }
+        }
+      ],
+      "note": null
+    }
+  },
+  "derived_structured_data": [
+    {
+      "id": "sd-supply-777",
+      "type": "SUPPLYOUTPUT",
+      "establishment_id": "est-la-esperanza",
+      "data": {
+        "basic_info": {
+          "record_date": "2026-03-12",
+          "lote": "Lote Sur"
+        },
+        "source_activity_id": "sd-fert-002",
+        "records": [
+          {
+            "item_id": "it-supply-777-r0",
+            "supply_id": "sup-urea",
+            "quantity": 100,
+            "unit": 2,
+            "source_item_id": "it-fert-002-f0",
+            "quantity_source": "USER"
+          }
+        ],
+        "note": null
+      }
+    }
+  ],
+  "activity_supply_link": [
+    {
+      "id": "lnk-002-f0",
+      "establishment_id": "est-la-esperanza",
+      "activity_id": "sd-fert-002",
+      "activity_type": "FERTILIZATION",
+      "record_date": "2026-03-12",
+      "role": "APPLICATION",
+      "origin": "ACTIVITY",
+      "item_kind": "FERTILIZER",
+      "item_id": "it-fert-002-f0",
+      "position": 0,
+      "supply_id": "sup-urea",
+      "raw_name": "Urea",
+      "dosage": 10,
+      "dosage_units": "kg/ha",
+      "quantity": null,
+      "quantity_unit_id": null,
+      "quantity_source": null,
+      "applied_by_link_id": null,
+      "parent_activity_id": null,
+      "deleted_at": null,
+      "deleted_by": null
+    },
+    {
+      "id": "lnk-777-r0",
+      "establishment_id": "est-la-esperanza",
+      "activity_id": "sd-supply-777",
+      "activity_type": "SUPPLYOUTPUT",
+      "record_date": "2026-03-12",
+      "role": "CONSUMPTION",
+      "origin": "ACTIVITY",
+      "item_kind": "RECORD",
+      "item_id": "it-supply-777-r0",
+      "position": 0,
+      "supply_id": "sup-urea",
+      "raw_name": "Urea",
+      "dosage": null,
+      "dosage_units": null,
+      "quantity": 100,
+      "quantity_unit_id": 2,
+      "quantity_source": "USER",
+      "applied_by_link_id": "lnk-002-f0",
+      "parent_activity_id": "sd-fert-002",
+      "deleted_at": null,
+      "deleted_by": null
+    }
+  ]
+}

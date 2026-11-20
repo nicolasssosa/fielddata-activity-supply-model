@@ -1,0 +1,140 @@
+{
+  "structured_data": {
+    "id": "sd-siembra-001",
+    "type": "PLANTATION",
+    "establishment_id": "est-la-esperanza",
+    "data": {
+      "basic_info": {
+        "record_date": "2026-03-10",
+        "crop_category": "Maíz"
+      },
+      "fields": [
+        {
+          "field_id": "fld-lote-norte",
+          "name": "Lote Norte",
+          "hectares": 50
+        }
+      ],
+      "details": {
+        "genetic_variety": "DK7210",
+        "genetic_variety_supply_id": "sup-dk7210",
+        "genetic_variety_deduction": {
+          "quantity": 40
+        },
+        "spacing": 0.52
+      },
+      "density": {
+        "density": 80000,
+        "density_units": "seeds/ha"
+      },
+      "fertilizers": [
+        {
+          "item_id": "it-siembra-001-f0",
+          "source": "Fosfato diamónico",
+          "supply_id": "sup-fosfato-diamonico",
+          "dosage": 100,
+          "dosage_units": "kg/ha",
+          "deduction": null
+        }
+      ],
+      "contractor": null,
+      "note": null
+    }
+  },
+  "derived_structured_data": [
+    {
+      "id": "sd-supply-776",
+      "type": "SUPPLYOUTPUT",
+      "establishment_id": "est-la-esperanza",
+      "data": {
+        "basic_info": {
+          "record_date": "2026-03-10",
+          "lote": "Lote Norte"
+        },
+        "source_activity_id": "sd-siembra-001",
+        "records": [
+          {
+            "item_id": "it-supply-776-r0",
+            "supply_id": "sup-dk7210",
+            "quantity": 40,
+            "unit": 5,
+            "source_item_id": "it-siembra-001-gen",
+            "quantity_source": "USER"
+          }
+        ],
+        "note": null
+      }
+    }
+  ],
+  "activity_supply_link": [
+    {
+      "id": "lnk-001-f0",
+      "establishment_id": "est-la-esperanza",
+      "activity_id": "sd-siembra-001",
+      "activity_type": "PLANTATION",
+      "record_date": "2026-03-10",
+      "role": "APPLICATION",
+      "origin": "ACTIVITY",
+      "item_kind": "FERTILIZER",
+      "item_id": "it-siembra-001-f0",
+      "position": 0,
+      "supply_id": "sup-fosfato-diamonico",
+      "raw_name": "Fosfato diamónico",
+      "dosage": 100,
+      "dosage_units": "kg/ha",
+      "quantity": null,
+      "quantity_unit_id": null,
+      "quantity_source": null,
+      "applied_by_link_id": null,
+      "parent_activity_id": null,
+      "deleted_at": null,
+      "deleted_by": null
+    },
+    {
+      "id": "lnk-001-gen",
+      "establishment_id": "est-la-esperanza",
+      "activity_id": "sd-siembra-001",
+      "activity_type": "PLANTATION",
+      "record_date": "2026-03-10",
+      "role": "APPLICATION",
+      "origin": "ACTIVITY",
+      "item_kind": "GENETIC",
+      "item_id": "it-siembra-001-gen",
+      "position": 0,
+      "supply_id": "sup-dk7210",
+      "raw_name": "DK7210",
+      "dosage": 80000,
+      "dosage_units": "seeds/ha",
+      "quantity": null,
+      "quantity_unit_id": null,
+      "quantity_source": null,
+      "applied_by_link_id": null,
+      "parent_activity_id": null,
+      "deleted_at": null,
+      "deleted_by": null
+    },
+    {
+      "id": "lnk-776-r0",
+      "establishment_id": "est-la-esperanza",
+      "activity_id": "sd-supply-776",
+      "activity_type": "SUPPLYOUTPUT",
+      "record_date": "2026-03-10",
+      "role": "CONSUMPTION",
+      "origin": "ACTIVITY",
+      "item_kind": "RECORD",
+      "item_id": "it-supply-776-r0",
+      "position": 0,
+      "supply_id": "sup-dk7210",
+      "raw_name": "DK7210",
+      "dosage": null,
+      "dosage_units": null,
+      "quantity": 40,
+      "quantity_unit_id": 5,
+      "quantity_source": "USER",
+      "applied_by_link_id": "lnk-001-gen",
+      "parent_activity_id": "sd-siembra-001",
+      "deleted_at": null,
+      "deleted_by": null
+    }
+  ]
+}
