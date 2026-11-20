@@ -2,7 +2,6 @@
   "structured_data": {
     "id": "sd-siembra-001",
     "type": "PLANTATION",
-    "establishment_id": "est-la-esperanza",
     "data": {
       "basic_info": {
         "record_date": "2026-03-10",
@@ -45,7 +44,6 @@
     {
       "id": "sd-supply-776",
       "type": "SUPPLYOUTPUT",
-      "establishment_id": "est-la-esperanza",
       "data": {
         "basic_info": {
           "record_date": "2026-03-10",
@@ -69,7 +67,6 @@
   "activity_supply_link": [
     {
       "id": "lnk-001-f0",
-      "establishment_id": "est-la-esperanza",
       "activity_id": "sd-siembra-001",
       "activity_type": "PLANTATION",
       "record_date": "2026-03-10",
@@ -92,7 +89,6 @@
     },
     {
       "id": "lnk-001-gen",
-      "establishment_id": "est-la-esperanza",
       "activity_id": "sd-siembra-001",
       "activity_type": "PLANTATION",
       "record_date": "2026-03-10",
@@ -115,7 +111,6 @@
     },
     {
       "id": "lnk-776-r0",
-      "establishment_id": "est-la-esperanza",
       "activity_id": "sd-supply-776",
       "activity_type": "SUPPLYOUTPUT",
       "record_date": "2026-03-10",
